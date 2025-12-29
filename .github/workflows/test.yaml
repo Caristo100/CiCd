@@ -15,3 +15,12 @@ jobs:
           exit 1
       - name: goodbye
         run: echo "Goodbye!"
+  echo-job3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Successfull job
+        run: |
+          echo "This job is designed to fail."
+          exit 0
+      - name: goodbye
+        run: echo "Goodbye!"
