@@ -8,3 +8,8 @@ jobs:
         steps:
           - name: Show OS Information
             run: echo "This workflow runs on ${{ runner.os }} runner!"
+    workflow-runner-job2:
+        runs-on: windows-latest
+        steps:
+          - name: Show OS Information
+            run: echo "This workflow runs on ${{ runner.os }} runner!"
