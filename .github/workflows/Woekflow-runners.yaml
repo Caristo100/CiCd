@@ -1,0 +1,10 @@
+name: Workflow runners
+on: 
+  push:
+
+jobs:
+    workflow-runner-job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Show OS Information
+            run: echo "This workflow runs on ${{ runner.os }} runner!"
