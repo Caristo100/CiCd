@@ -13,6 +13,6 @@ jobs:
         with:
           node-version: '18.x'
       - name: Install dependencies
-        run: npm Ci
+        run: npm ci
         working-directory: Action-GA/react-app
       
