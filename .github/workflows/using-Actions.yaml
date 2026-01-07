@@ -8,5 +8,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: prinding folder
-        run: ls
+      - name: setup-node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+      - name: Install dependencies
+        run: npm Ci
+        working-directory: Action-GA/react-app
+      
