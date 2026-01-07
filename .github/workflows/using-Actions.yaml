@@ -5,6 +5,9 @@ on:
 jobs:
   action-job:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Actions-GA/react-app
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -14,5 +17,6 @@ jobs:
           node-version: '18.x'
       - name: Install dependencies
         run: npm ci
-        working-directory: Actions- GA/react-app
+      - name: Run tests
+        run: npm test
       
