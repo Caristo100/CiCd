@@ -1,0 +1,13 @@
+name: filter-activity-type2
+on:
+  pull_request:
+    types: 
+      - closed
+    branches:
+      - main
+jobs:
+    echo-activity-type2:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Show Activity Type
+            run: echo "This workflow was closed. The pull request has been closed."
