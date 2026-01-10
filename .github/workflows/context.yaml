@@ -2,7 +2,7 @@ name: context
 on:
   push:
 
-    
+
 jobs:
     show-context:
         runs-on: ubuntu-latest
@@ -18,3 +18,7 @@ jobs:
               echo "Job: ${{ github.job }}"
               echo "Run ID: ${{ github.run_id }}"
               echo "Run Number: ${{ github.run_number }}"
+          - name: Retrive variables
+            run: |
+                echo "var1 is ${{ vars.var1 }}"
+                
