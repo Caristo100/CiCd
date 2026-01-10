@@ -1,0 +1,19 @@
+name: Filter activity type
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: 
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - main
+
+jobs:
+    echo-activity-type:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Show Activity Type
+            run: echo "This workflow was triggered by a ${{ github.event_name }} event!"

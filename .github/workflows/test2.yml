@@ -1,4 +1,4 @@
-name: Workflow event
+name: Workflow event #Triggers - here on is used to define multiple events which can trigger the workflow
 on: 
   push:
   pull_request:

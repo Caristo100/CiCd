@@ -4,7 +4,7 @@ on:
 
 jobs:
     workflow-runner-job:
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-latest # here runs-on is used to define the type of runner on which the job will run, it is often called as runner specification.
         steps:
           - name: Show OS Information
             run: echo "This workflow runs on ${{ runner.os }} runner!"
