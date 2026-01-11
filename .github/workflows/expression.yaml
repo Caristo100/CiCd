@@ -12,6 +12,13 @@ jobs:
     evaluate-expression:
         runs-on: ubuntu-latest
         steps:
-          - name: '[debug]Evaluate Expression'
-            if: ${{ inputs.debug == true }}
-            run: echo "Debug mode is enabled."
+        - name: '[debug]Evaluate Expression'
+          if: ${{ inputs.debug == true }}
+          run: echo "Debug mode is enabled."
+        - name: '[debug] print when triggered from main branch'
+          if: ${{ github.ref == 'refs/heads/main' && inputs.debug == true }}
+          run: |
+            echo "This workflow was manually triggered from the main branch with debug mode enabled."
+        - name: 'Greetings'
+          run: echo "Hello! This is the expression workflow."
+
