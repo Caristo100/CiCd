@@ -1,12 +1,12 @@
 name: context
-run-name: Context|Debug- ${{ inputs.debug }}
+run-name: Context|Debug- ${{ inputs.debug }} #
 on:
   push:
-  workflow_dispatch:
-    inputs:
-        debug:
-            type: boolean
-            default: false
+  workflow_dispatch: #workflow_dispatch allows you to manually trigger a workflow run.
+    inputs: #inputs allow you to define parameters that can be passed to the workflow when it is manually triggered.
+        debug: #input parameter named debug
+            type: boolean #type of the input parameter is boolean
+            default: false #default value is false
 
 jobs:
     show-context:
