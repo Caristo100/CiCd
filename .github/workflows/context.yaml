@@ -1,5 +1,5 @@
 name: context
-run-name: Context|Debug 
+run-name: Context|Debug- ${{ inputs.debug }}
 on:
   push:
   workflow_dispatch:
