@@ -1,7 +1,13 @@
 name: context
+run-name: Context|Debug 
 on:
   push:
   workflow_dispatch:
+    inputs:
+        debug:
+            type: boolean
+            default: false
+
 jobs:
     show-context:
         runs-on: ubuntu-latest
