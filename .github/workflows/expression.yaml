@@ -16,7 +16,7 @@ jobs:
           if: ${{ inputs.debug == true }}
           run: echo "Debug mode is enabled."
         - name: '[debug] print when triggered from main branch'
-          if: ${{ github.ref == 'refs/heads/main' && inputs.debug == true }}
+          if: ${{ inputs.debug == true && github.ref == 'refs/heads/main'}}
           run: |
             echo "This workflow was manually triggered from the main branch with debug mode enabled."
         - name: 'Greetings'
