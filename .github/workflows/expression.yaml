@@ -1,0 +1,17 @@
+name: expression
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+        debug:
+            type: boolean
+            default: false
+
+
+jobs:
+    evaluate-expression:
+        runs-on: ubuntu-latest
+        steps:
+          - name: '[debug]Evaluate Expression'
+            if: ${{ inputs.debug == true }}
+            run: echo "Debug mode is enabled."
