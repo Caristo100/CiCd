@@ -14,7 +14,9 @@ jobs:
         - name: 'Set up variables'
           env:
             Var: "Success"
+            Var2: "42"
           run: |
             echo " My test variable ${{ env.Var}}"
+            echo " Another variable 2 $Var2"
             echo " Job level variable ${{ env.Job_Var}}"
             echo " Global level variable ${{ env.Global_Var}}"
