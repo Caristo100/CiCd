@@ -20,3 +20,13 @@ jobs:
             echo " Another variable 2 $Var2"
             echo " Job level variable ${{ env.Job_Var}}"
             echo " Global level variable ${{ env.Global_Var}}"
+
+# Variable define at workflow level will be overridden by job level variable with same name
+#Variable defined at job level will be overridden by step level variable with same name
+# Step level variable can access job level and workflow level variable
+# Job level variable can access workflow level variable
+# Workflow level variable is accessible everywhere in the workflow
+# Use ${{ env.VARIABLE_NAME }} to access variable defined at workflow or job level
+# Use $VARIABLE_NAME to access variable defined at step level
+# Use echo to print variable value in run section
+# Use pipe (|) to write multi-line commands in run section
