@@ -1,5 +1,6 @@
 name: Using variables
-
+env:
+    Global_Var: "Global Var"
 on:
    push:
    workflow_dispatch:
@@ -7,9 +8,13 @@ on:
 jobs:
     use-variables:
         runs-on: ubuntu-latest
+        env:
+            Job_Var: "Job Var"
         steps:
         - name: 'Set up variables'
           env:
             Var: "Success"
           run: |
             echo " My test variable ${{ env.Var}}"
+            echo " Job level variable ${{ env.Job_Var}}"
+            echo " Global level variable ${{ env.Global_Var}}"
