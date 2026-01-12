@@ -1,0 +1,15 @@
+name: Using variables
+
+on:
+   push:
+   workflow_dispatch:
+
+jobs:
+    use-variables:
+        runs-on: ubuntu-latest
+        steps:
+        - name: 'Set up variables'
+          env:
+            Var: "Success"
+          run: |
+            echo " My test variable ${{ env.Var}}"
