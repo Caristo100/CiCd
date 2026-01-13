@@ -1,5 +1,4 @@
 name: Functions
-
 on:
     pull_request:
     workflow_dispatch:
