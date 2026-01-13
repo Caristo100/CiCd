@@ -1,0 +1,51 @@
+#organisational variable workflow
+
+
+#Your company has 20 microservice repositories under one GitHub organization.
+#All services are deployed to AWS Mumbai region.
+
+#Common value
+#AWS_REGION = ap-south-1
+
+
+#Instead of defining this in every repo…
+
+# Without organization-level variable
+
+#You define AWS_REGION separately in:
+
+#repo-1
+
+#repo-2
+
+#repo-3
+
+#repo-20
+
+#⚠️ Problems:
+
+#Duplicate configuration
+
+#Risk of mismatch
+
+#Hard to change later
+
+#✅ With organization-level variable (best practice)
+
+#You define once at organization level:
+
+#GitHub → Organization → Settings → Variables
+
+#AWS_REGION = ap-south-1
+
+
+#Now all repositories can use it.
+
+#Benefits:
+#Single source of truth
+#Easier maintenance
+#Reduced risk of errors
+#Simplified configuration
+
+#To use organization-level variables in your workflows, you can reference them just like other environment variables.
+#Environment variables override repository variables, and repository variables override organization variables.
