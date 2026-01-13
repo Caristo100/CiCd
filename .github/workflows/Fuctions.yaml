@@ -7,6 +7,8 @@ jobs:
     test-fuctions:
         runs-on: ubuntu-latest
         steps:
+            - name: Sleep for 10 Seconds
+              run: sleep 10
             - name: failing step
               run: exit 1
             - name: I will be skipped
