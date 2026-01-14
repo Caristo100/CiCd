@@ -1,0 +1,46 @@
+name: executionflow
+on:
+  workflow_dispatch:
+    inputs:
+        conditional-trigger:
+            type: boolean
+            description: 'Set to true to trigger conditional jobs'
+            default: false
+            
+     
+
+jobs:
+    Job1:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Job 1 Step
+            run: echo "This is Job 1"
+    Job2:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Job 2 Step
+            run: echo "This is Job 2"
+    Job3:
+        runs-on: ubuntu-latest
+        needs: [Job1, Job2]
+        steps:
+          - name: Job 3 Step
+            run: echo "This is Job 3, which runs after Job 1 and Job 2"
+# This workflow demonstrates execution flow control using job dependencies.
+# Job3 will only run after both Job1 and Job2 have successfully completed.
+# Use 'needs' keyword to define job dependencies.
+# Each job runs on an ubuntu-latest runner.
+    job4:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Job 4 Step
+            run: echo "This is Job 4"
+          - name: Conditional Step
+            if: ${{ !inputs.conditional-trigger }}
+            run: echo "Conditional trigger is true, so this step runs."
+    job5:
+        runs-on: ubuntu-latest
+        needs: job4
+        steps:
+          - name: Job 5 Step
+            run: echo "This is Job 5, which runs after Job 4"
