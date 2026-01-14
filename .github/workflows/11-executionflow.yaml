@@ -10,6 +10,11 @@ on:
      
 
 jobs:
+    sleep-job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Sleep for 5 seconds
+            run: sleep 5
     Job1:
         runs-on: ubuntu-latest
         steps:
@@ -26,11 +31,6 @@ jobs:
         steps:
           - name: Job 3 Step
             run: echo "This is Job 3, which runs after Job 1 and Job 2"
-    SleepJob:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Sleep for 10 seconds
-            run: sleep 10
 # This workflow demonstrates execution flow control using job dependencies.
 # Job3 will only run after both Job1 and Job2 have successfully completed.
 # Use 'needs' keyword to define job dependencies.
