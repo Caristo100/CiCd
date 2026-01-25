@@ -25,8 +25,14 @@ on:
                 default: 'false'
 
 jobs:
-    deploy:
+    build:
         runs-on: ubuntu-latest
         steps:
             - name: Deploy
               run: echo "Deploying to ${{ inputs.tag }}"
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy
+              run: echo "Deploying to ${{ inputs.target }} environment"
+              
