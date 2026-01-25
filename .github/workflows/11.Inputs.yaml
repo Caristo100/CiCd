@@ -1,0 +1,32 @@
+#Inputs:Inputs enable us to request specific information from the workflow or action caller and use this information at runtime.
+name: Inputs Example
+on:
+    workflow_dispatch:
+        inputs:
+            dry_run:
+                description: 'Perform a dry run without making changes'
+                required: false
+                default: 'true'
+            target:
+                type: environment
+                description: 'Target deployment environment'
+                required: true
+            tag:
+                type: choice
+                options:
+                  - 'v1.0'
+                  - 'v1.1'
+                  - 'v2.0'
+                default: 'v2.0' 
+                description: 'Version to deploy'
+            notify:
+                description: 'Notify team after deployment'
+                required: false
+                default: 'false'
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy
+              run: echo "Deploying to ${{ inputs.tag }}"
